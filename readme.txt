@@ -11,7 +11,7 @@ Future: SR-10, SR-11
 
 Посилання
 ---------
-GitHub repository: <ВСТАВТЕ ПОСИЛАННЯ НА РЕПОЗИТОРІЙ>
+GitHub repository: https://github.com/NureKurinnaDaria/Mini_Issue_Tracker_UX_UI
 Figma (can view): https://www.figma.com/design/VRik3SXtmuwUqx73p4X8vW/Mini-Issue-Tracker---UX-UI---Kurinna-Daria?node-id=0-1&t=fM5yfYWqDbzfHX5C-1
 
 Склад репозиторію
