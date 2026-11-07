@@ -81,7 +81,7 @@
 | **T-02** | S-02-A   | Team Member / Team Lead | Click issue                           | Issue exists                                 | S-03                              | Issue details                                    | US-02 AC-02.3–02.4                           |
 | **T-03** | S-02-B   | Team Member / Team Lead | Click issue                           | Important issue exists                       | S-03                              | Important issue details                          | US-08, BR-09                                 |
 | **T-04** | S-02-A/B | Team Member             | Click Create                          | Authenticated                                | M-01                              | Create modal                                     | US-01, BR-02, **D-01**                       |
-| **T-05** | M-01     | Team Member             | Create                                | Title + Description non-empty                | S-03 / corresponding list context | New issue: ID, Open, Not Set, author, created_at | US-01 AC-01.1–01.5; BR-03–04; **D-03**       |
+| **T-05** | M-01     | Team Member             | Create                                | Title + Description non-empty                | S-03 (newly created issue)         | New issue: ID, Open, Not Set, author, created_at | US-01 AC-01.1–01.5; BR-03–04; **D-03**       |
 | **T-06** | M-01     | Team Member             | Create                                | Title empty                                  | M-01                              | Issue not created; Title required error          | US-01 AC-01.2; negative BDD                  |
 | **T-07** | M-01     | Team Member             | Create                                | Description empty                            | M-01                              | Issue not created; Description validation        | US-01 AC-01.3                                |
 | **T-08** | M-01     | Team Member             | Cancel/close                          | Modal open                                   | Previous S-02 state               | List preserved                                   | **D-01, D-07**                               |
@@ -100,9 +100,9 @@
 | **T-21** | S-03     | Team Member             | Add comment                           | Save fails                                   | S-03                              | Comment not created + error                      | US-06 AC-06.5; Q-06                          |
 | **T-22** | S-02-A   | Team Member / Team Lead | Click Important                       | —                                            | S-02-B                            | Only Important issues visible                    | US-08; BR-09; **D-01**                       |
 | **T-23** | S-02-B   | Team Member / Team Lead | Click All                             | —                                            | S-02-A                            | All issues visible                               | **D-01**                                     |
-| **T-24** | S-02-A/B | Team Member / Team Lead | Return/Back from S-03                 | Previous list state recorded                 | Previous S-02 state               | Same list tab/state restored                     | **D-07**                                     |
+| **T-24** | S-03     | Team Member / Team Lead | Return/Back from S-03                 | Previous list state recorded                 | Previous S-02 state (S-02-A or S-02-B) | Same list tab/state restored                     | **D-07**                                     |
 | **T-25** | S-02-A   | Team Member / Team Lead | List evaluated                        | No issues                                    | S-02-C                            | Empty All state                                  | US-02 AC-02.5; Q-07                          |
-| **T-26** | S-02-B   | Team Member / Team Lead | Important evaluated                   | No High/Critical non-Closed issues           | S-02-C                            | Empty Important state                            | US-08; Q-07                                  |
+| **T-26** | S-02-B   | Team Member / Team Lead | Important evaluated                   | No High/Critical non-Closed issues           | S-02-B (Empty Important state)    | Empty Important state                            | US-08; Q-07                                  |
 
 
 
@@ -653,5 +653,4 @@ Control:
 
 6. DEF-06: REF-01 поза продуктовими frames: 4 контексти ролей × 4 статуси як компактні приклади, не 16 повних екранів.
 
-
-
+(CHK-13, 07.11.2026) Основну таблицю переходів виправлено: T-24 — із S-03 до попереднього S-02; T-05 — до S-03 нової заявки; T-26 — S-02-B, Empty Important state (S-02-C лишається Empty All, T-25).

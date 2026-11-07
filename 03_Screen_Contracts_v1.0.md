@@ -836,8 +836,8 @@ Team Lead does **not** receive status permission merely from being Team Lead.
 
 | C-ID        | Label           | Type              | Condition                                   | Trigger | Result                                                  | Source/D-ID        |
 | ----------- | --------------- | ----------------- | ------------------------------------------- | ------- | ------------------------------------------------------- | ------------------ |
-| **C-03-07** | Comment         | text input        | enabled for any authenticated team member   | type    | comment text entered                                    | BR-02, US-06       |
-| **C-03-08** | Add Comment     | button            | available for any authenticated team member | click   | success → stored comment; failure → error; remains S-03 | US-06, BR-02      |
+| **C-03-07** | Comment         | text input        | enabled for any authenticated team member   | type    | comment text entered                                    | US-06 AC-06.1–06.5 |
+| **C-03-08** | Add Comment     | button            | available for any authenticated team member | click   | success → stored comment; failure → error; remains S-03 | US-06 AC-06.1–06.5 |
 | **C-03-09** | Comment display | content component | for stored comments                         | render  | text + author + creation time visible                   | US-06 AC-06.2–06.4 |
 
 
@@ -1699,7 +1699,7 @@ The same principle applies to fixture examples for Important predicate.
 | US-01 AC-01.4                        | UIR-04 | S-03              | issue data annotation        | TEST-03           | Prototype + Implementation        |
 | US-01 AC-01.5                        | UIR-05 | M-01/S-03         | Priority annotation          | TEST-03           | Mock + Prototype + Implementation |
 | US-02 AC-02.1                        | UIR-06 | S-02-A/B          | list annotation              | TEST-08           | Mock + Prototype + Implementation |
-| US-02 AC-02.2                        | UIR-07 | S-02-A/B          | list fields                  | TEST-08           | Mock + Prototype + Implementation |
+| US-02 AC-02.2                        | UIR-07 | S-02-A/B          | list fields                  | TEST-38           | Mock + Prototype + Implementation |
 | US-02 AC-02.3                        | UIR-08 | S-02-A/B          | C-02-04                      | TEST-08           | Mock + Prototype                  |
 | US-02 AC-02.4                        | UIR-09 | S-03              | visible-data contract        | TEST-08           | Mock + Prototype + Implementation |
 | US-02 AC-02.5                        | UIR-10 | S-02-C            | empty-state annotation       | TEST-31           | Mock + Prototype + Implementation |
@@ -1711,7 +1711,7 @@ The same principle applies to fixture examples for Important predicate.
 | US-04 AC-04.2                        | UIR-16 | S-03              | C-03-03                      | TEST-12/13        | Mock + Prototype + Implementation |
 | US-05 AC-05.1                        | UIR-17 | S-02-A/B          | Status field                 | TEST-08           | Mock + Prototype + Implementation |
 | US-05 AC-05.2                        | UIR-18 | S-03              | Status field                 | TEST-15–23        | Mock + Prototype + Implementation |
-| US-05 AC-05.3                        | UIR-19 | S-02-A/B          | Status field                 | TEST-08           | Mock + Prototype + Implementation |
+| US-05 AC-05.3                        | UIR-19 | S-02-A/B          | Status field                 | TEST-38           | Mock + Prototype + Implementation |
 | US-06 AC-06.1                        | UIR-20 | S-03              | C-03-07/08                   | TEST-26           | Mock + Prototype + Implementation |
 | US-06 AC-06.2                        | UIR-21 | S-03              | C-03-09                      | TEST-24           | Mock + Prototype + Implementation |
 | US-06 AC-06.3                        | UIR-22 | S-03              | C-03-09                      | TEST-24           | Mock + Prototype + Implementation |
@@ -1723,11 +1723,11 @@ The same principle applies to fixture examples for Important predicate.
 | US-07 AC-07.4                        | UIR-28 | S-03              | C-03-05                      | TEST-19/20        | Mock + Prototype + Implementation |
 | US-07 AC-07.5                        | UIR-29 | S-03              | only four valid statuses offered; forbidden transitions = BR-08.1     | TEST-15–18        | Mock + Prototype + Implementation |
 | US-08 AC-08.1                        | UIR-30 | S-02-B            | Important predicate          | TEST-28           | Prototype + Implementation        |
-| US-08 AC-08.2                        | UIR-31 | S-02-B            | Important predicate          | TEST-28           | Prototype + Implementation        |
-| US-08 AC-08.3                        | UIR-32 | S-02-B            | Important predicate          | TEST-29/30        | Prototype + Implementation        |
+| US-08 AC-08.2                        | UIR-31 | S-02-B            | Important predicate          | TEST-35           | Prototype + Implementation        |
+| US-08 AC-08.3                        | UIR-32 | S-02-B            | Important predicate          | TEST-36/37        | Prototype + Implementation        |
 | US-08 AC-08.4                        | UIR-33 | S-02-B            | Important predicate          | TEST-29           | Prototype + Implementation        |
 | BR-01                                | UIR-34 | S-01/S-02         | auth boundary                | TEST-01/02        | Prototype + Implementation        |
-| BR-02                                | UIR-35 | M-01/S-03         | Create/Comment controls      | TEST-03/04/24/25  | Mock + Prototype + Implementation |
+| BR-02                                | UIR-35 | M-01/S-03         | Create control               | TEST-03/04        | Mock + Prototype + Implementation |
 | BR-03                                | UIR-36 | S-03              | status annotation            | TEST-03           | Mock + Prototype + Implementation |
 | BR-04                                | UIR-37 | S-03              | Priority = Not Set           | TEST-03/14        | Mock + Prototype + Implementation |
 | BR-05                                | UIR-38 | S-03              | C-03-03                      | TEST-12/14        | Mock + Prototype + Implementation |
@@ -1979,7 +1979,6 @@ No future mock/prototype result should be marked **PASS** before the correspondi
 | **T-19** | S-03   | Successful Add Comment       | Remain S-03 with stored comment           |
 | **T-20** | S-03   | Empty comment attempt        | Remain S-03 in validation state           |
 | **T-21** | S-03   | Failed comment save          | Remain S-03 with error                    |
-| **T-24** | S-03   | Back                         | Return to the previous S-02 list state    |
 
 ### Outgoing transitions
 
@@ -2076,6 +2075,66 @@ N-01…N-07 are deliberately **not** included as outgoing transitions.
 
 ---
 
+### TEST-35 — Critical + In Progress → Important
+
+**Actor/context:** authenticated Team Member.
+**Precondition:** issue `Priority = Critical`, `Status = In Progress` (у макеті ISS-002).
+
+**Action:** select Important.
+
+**Expected visible result:** issue **відображається** в S-02-B.
+
+**Cannot prove:** actual production filtering.
+
+**Source:** US-08 AC-08.2; BR-09.
+
+---
+
+### TEST-36 — Low не входить до Important
+
+**Actor/context:** authenticated Team Member.
+**Precondition:** issue `Priority = Low`, `Status = Open` (у макеті ISS-001).
+
+**Action:** select Important.
+
+**Expected visible result:** issue **не відображається** в S-02-B; залишається в S-02-A.
+
+**Cannot prove:** actual production filtering.
+
+**Source:** US-08 AC-08.3; BR-09.
+
+---
+
+### TEST-37 — Normal не входить до Important
+
+**Actor/context:** authenticated Team Member.
+**Precondition:** issue `Priority = Normal`, `Status = Resolved` (у макеті ISS-005).
+
+**Action:** select Important.
+
+**Expected visible result:** issue **не відображається** в S-02-B; залишається в S-02-A.
+
+**Cannot prove:** actual production filtering.
+
+**Source:** US-08 AC-08.3; BR-09.
+
+---
+
+### TEST-38 — Поля рядка списку
+
+**Actor/context:** authenticated Team Member or Team Lead.
+**Precondition:** у списку є issues, серед них один без assignee (у макеті ISS-006).
+
+**Action:** open All.
+
+**Expected visible result:** кожен рядок показує Issue ID, Title, Status, Priority; Assignee показується лише для призначеної заявки; рядок без assignee не має значення Assignee.
+
+**Cannot prove:** actual data retrieval.
+
+**Source:** US-02 AC-02.2; US-05 AC-05.1, AC-05.3.
+
+---
+
 # 5. Traceability Addendum
 
 | Source ID / пункт                                  | UIR-ID | Screen/State | C-ID / annotation                       | Test ID             | Verification level                |
@@ -2086,7 +2145,7 @@ N-01…N-07 are deliberately **not** included as outgoing transitions.
 | **NFR-03** — HTTPS only                            | UIR-59 | All          | —                                       | —                   | **NOT VERIFIABLE in mock**        |
 | **NFR-04** — backup of all data                    | UIR-60 | All          | —                                       | —                   | **NOT VERIFIABLE in mock**        |
 | **BR-08.1** — allowed status transitions           | UIR-42 | S-03         | C-03-05                                 | TEST-15–23, TEST-33 | Mock + Prototype + Implementation |
-| **BR-09** — Important predicate                    | UIR-43 | S-02-B       | Important predicate annotation          | TEST-28–30, TEST-33 | Prototype + Implementation        |
+| **BR-09** — Important predicate                    | UIR-43 | S-02-B       | Important predicate annotation          | TEST-28–30, 33, 35–37| Prototype + Implementation        |
 | **BR-09.1** — Resolved remains active until Closed | UIR-44 | S-02-B/S-03  | Resolved ≠ Closed annotation            | TEST-28, TEST-33    | Prototype + Implementation        |
 
 ### Source-reference corrections
@@ -2123,3 +2182,10 @@ S-02-A Entry is now limited to:
 * **T-24** from S-03 when the previous list state was S-02-A.
 
 The phrase **“після відповідного flow створення/оновлення”** is removed.
+
+### Corrections CHK-13 (07.11.2026)
+
+- Додано TEST-35…38; AC-02.2, AC-05.3, AC-08.2, AC-08.3 перепривʼязано до тестів, що їх перевіряють.
+- C-03-07 і C-03-08: джерело змінено з `BR-02, US-06` на `US-06 AC-06.1–06.5` (BR-02 стосується лише створення issue).
+- UIR-35 (BR-02): лише Create control.
+- Таблиця Incoming transitions для S-03: T-24 прибрано (T-24 виходить зі S-03, лишається в Outgoing).
