@@ -51,6 +51,8 @@ Figma (can view): https://www.figma.com/design/VRik3SXtmuwUqx73p4X8vW/Mini-Issue
   (T-01, T-02, T-03, T-04, T-05, T-08, T-22, T-23, T-24). Після правки D-07
   (CHK-12) Back у S-03 повертає на попередню вкладку списку (All або Important),
   Create відкривається з обох вкладок, Cancel повертає на ту саму вкладку.
+  Після CHK-13 Create (T-05) відкриває S-03 нової заявки ISS-007 (Open, Not Set,
+  без assignee), а не ISS-003.
 - G6 — фінальний аудит на 9 frames: UI design coverage — Complete;
   зауваження DEF-01–06 і UX-01–05 розглянуто в CHK-12 (1 прийнято і виправлено,
   решта відхилено з причинами); implementation-level вимоги залишаються
@@ -81,4 +83,4 @@ Figma (can view): https://www.figma.com/design/VRik3SXtmuwUqx73p4X8vW/Mini-Issue
 Після аудиту G6 (v1.0) AI-перевірка не повторювалась; правки v1.1 стосуються
 анотацій REF-03 і навігації прототипу (CHK-11, CHK-12).
 Примітка: DEF-ID у Review_Report (G6) і в Review_Defect_Change_Log (CHK-02…CHK-05) нумеруються окремо і не збігаються за змістом; у журналі зауваження G6 розглянуто в CHK-12.
-Після зауважень викладача (CHK-13): виправлено traceability тестів, джерела вимог, переходи у Screen Map/контрактах/REF-03, додано 07_Final_Verification_v1.2.md.
+Після зауважень викладача (CHK-13): виправлено traceability тестів, джерела вимог, переходи у Screen Map/контрактах/REF-03, додано 07_Final_Verification_v1.2.md, у прототипі T-05 переспрямовано на нову заявку ISS-007. Використання AI зафіксовано в AI_interaction_log.md (Запис 11).
