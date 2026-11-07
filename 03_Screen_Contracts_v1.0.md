@@ -1831,7 +1831,7 @@ It is UX only and does not become a source requirement.
 
 
 
-### D-04 teacher confirmation note
+### D-04 — примітка
 
 
 

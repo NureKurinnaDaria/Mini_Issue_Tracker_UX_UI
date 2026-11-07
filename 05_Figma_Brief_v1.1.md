@@ -944,7 +944,7 @@ This brief is compiled from `03_Screen_Contracts_v1.0.md` (G3 screen contracts a
 
 
 
-* D-04 is marked APPROVED in the Decision Log, but that same entry says teacher confirmation is required because post-create/reassignment behavior is not explicitly detailed in the source specification. Preserve this caveat in the working notes; do not rewrite D-04 as a source acceptance criterion.
+* D-04 is APPROVED in the Decision Log (ed. 1.2) as a design decision, not a direct requirement of the source specification: a new issue has no assignee, and only Team Lead can assign and reassign. Do not rewrite D-04 as a source acceptance criterion.
 
 ## Changelog
 
