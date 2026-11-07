@@ -11,8 +11,8 @@
 | US-01 AC-01.1 | Введення Title і Description | M-01 | PASS (mock) |
 | US-01 AC-01.2 | Title обов'язковий | REF-02, M-01 Empty Title | STATIC |
 | US-01 AC-01.3 | Description обов'язковий | REF-02, M-01 Empty Description | STATIC |
-| US-01 AC-01.4 | Нова заявка отримує ID, Open, дату, автора | REF-02, S-03 New issue (ISS-007) | STATIC; генерація ID і часу NOT VERIFIABLE |
-| US-01 AC-01.5 | Priority не встановлено (Not Set) | REF-02, S-03 New issue | STATIC |
+| US-01 AC-01.4 | Нова заявка отримує ID, Open, дату, автора | REF-02, M-01 → S-03 New issue (ISS-007) | PASS (prototype): Create відкриває S-03 нової заявки; генерація ID і часу NOT VERIFIABLE |
+| US-01 AC-01.5 | Priority не встановлено (Not Set) | REF-02, S-03 New issue (ISS-007) | PASS (prototype) |
 | US-02 AC-02.1 | Перегляд списку | S-02-A | PASS (mock) |
 | US-02 AC-02.2 | Поля рядка: ID, Title, Status, Priority, Assignee, якщо призначений | S-02-A/B (ISS-006 без Assignee), TEST-38 | PASS (mock) |
 | US-02 AC-02.3 | Вибір заявки відкриває деталі | S-02-A → S-03 (T-02) | PASS (prototype) |
@@ -49,6 +49,7 @@
 | All → ISS-003 → Back | Повернення на All (D-07) | PASS (prototype), 19.10.2026 |
 | Important → Create → Cancel | Повернення на Important | PASS (prototype), 19.10.2026 |
 | All → Create → Cancel | Повернення на All | PASS (prototype), 19.10.2026 |
+| All → Create → заповнені Title і Description → Create | Відкривається S-03 нової заявки ISS-007: Open, Not Set, без assignee, без коментарів (T-05), а не ISS-003 | PASS (prototype), 07.11.2026 |
 
 Не підключено як окремі шляхи (показано станами в REF-01/02): T-09, T-11, T-13–T-16, T-19–T-21.
 
@@ -59,7 +60,7 @@
 | Тести | Тема | Екран / доказ | Результат |
 | --- | --- | --- | --- |
 | TEST-01/02 | Межа автентифікації | S-01 | PASS (mock) як анотація; автентифікація NOT VERIFIABLE |
-| TEST-03/04 | Створення заявки (Member і Lead) | M-01, REF-02 S-03 New issue | STATIC; генерація ID NOT VERIFIABLE |
+| TEST-03/04 | Створення заявки (Member і Lead) | M-01 → S-03 New issue (ISS-007), REF-02 | PASS (prototype) для Team Member; для Team Lead STATIC; генерація ID NOT VERIFIABLE |
 | TEST-05/06 | Порожні Title і Description | REF-02 M-01 | STATIC |
 | TEST-07 | Cancel залишає попередню вкладку | M-01 Cancel | PASS (prototype) |
 | TEST-08 | Поля сторінки деталей | S-03 | PASS (mock) |
