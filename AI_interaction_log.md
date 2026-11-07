@@ -160,3 +160,18 @@
 
 - Limit / fallback: повідомлень про ліміт не було
 
+
+
+## Запис 11
+
+- Date / operator / step: 07.11.2026 / Daria / правки за зауваженнями викладача (CHK-13)
+
+- Tool / plan / mode: ChatGPT, тариф Free; звичайний чат; назва моделі в інтерфейсі не показана
+
+- Context / version: зауваження викладача (текст), репозиторій (02_Screen_Map_v1.0, 03_Screen_Contracts_v1.0, 05_Figma_Brief, 06_Review_Report, Decision_Log, Review_Defect_Change_Log), скріншоти Figma
+
+- Prompt / response: запит розібрати зауваження і запропонувати формулювання правок; запит пояснити, як у прототипі зробити окрему копію S-03 для нової заявки ISS-007 і перепризначити зв'язок Create (T-05); відповідь — тексти правок для .md-файлів і покрокові дії у Figma
+
+- Decision / evidence: кожну пропозицію звірено зі SD_Spec і з файлами репозиторію; правки в .md внесено вручну; Figma змінено вручну (копія S-03 → ISS-007, зв'язок Create), Present mode: All → Create → Create відкриває ISS-007; версію Figma збережено як v1.2
+
+- Limit / fallback: повідомлень про ліміт не було
